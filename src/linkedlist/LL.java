@@ -34,6 +34,25 @@ public class LL {
 		head = head.next;
 	}
 
+	public void deleteLast() { // to delete last value
+
+		if (head == null) {
+			System.out.println("the list is empty");
+			return;
+		}
+		if (head.next == null) {
+			head = null;
+			return;
+		}
+		Node secondLast = head;
+		Node LastNode = head.next;
+		while (LastNode.next != null) {
+			LastNode = LastNode.next;
+			secondLast = secondLast.next;
+		}
+		secondLast.next = null;
+	}
+
 	public void printList() { // to print output
 
 		if (head == null) {
@@ -58,7 +77,7 @@ public class LL {
 		list.addFirst(56);// addind 56 to linked list
 		list.printList();// printing list
 
-		list.deleteFirst(); // deleting 1st value
+		list.deleteLast(); // deleting last value
 		list.printList();
 
 	}
