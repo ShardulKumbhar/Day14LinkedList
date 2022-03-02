@@ -1,25 +1,52 @@
 package linkedlist;
 
 public class LL {
-	public int a;
-	public int b;
-	public int c;
-	public LL next;
+	Node head; // Start head
 
-	public LL(int a, int b, int c, LL next) { // constructor
-		this.a = a;
-		this.b = b;
-		this.c = c;
-		this.next = next;
+	class Node {
+		int data;
+		Node next;
+
+		Node(int data) {
+			this.data = data;
+			this.next = null;
+		}
 	}
 
-	public String toString() { // print value
-		return a + "->" + b + "->" + c;
+	// add to first value
+	public void addFirst(int data) {
+		Node newNode = new Node(data);
 
+		if (head == null) {
+			head = newNode;
+			return;
+		}
+		newNode.next = head;
+		head = newNode;
+	}
+
+	public void printList() { // to print output
+
+		if (head == null) {
+			System.out.println("list is empty");
+			return;
+		}
+		Node currNode = head;
+		while (currNode != null)
+
+		{
+			System.out.print(currNode.data + "->");
+			currNode = currNode.next;
+		}
+		System.out.println("Null");
 	}
 
 	public static void main(String[] args) {
-		LL front = new LL(56, 30, 70, null);// creating object front
-		System.out.println(front);// calling object
+		LL list = new LL();
+		list.addFirst(70);
+		list.addFirst(30);
+		list.addFirst(56);// addind 56 to linked list
+		list.printList();// printing list
+
 	}
 }
