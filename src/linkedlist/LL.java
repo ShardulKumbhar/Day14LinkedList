@@ -8,7 +8,7 @@ public class LL {
 	 * ============================================
 	 * 1.Creating node
 	 * 2.created method addNode to add data in linedList
-	 * 3. Method to search LinkedList and insert a node after 30
+	 * 3. Method to sort LinkedList in Asscending Order.
 	 * 4.created method to print the linked list
 	 * ============================================
 	 */
@@ -45,22 +45,23 @@ public class LL {
 	}
 
 	/*
-	 * 3. Method to search LinkedList and insert a node after 30
+	 * 3. Method to sort LinkedList in Asscending Order.
 	 */
-	public void searchInsert(int searchKey, int data) {
-		Node current = head;
-		Node newNode = new Node();
-		newNode.data = data;
-		int i = 0;
-		while (current != null) {
-
-			if (current.data == searchKey) {
-				System.out.println("Need to add 40 after 30");
-				newNode.next = current.next;
-				current.next = newNode;
+	public void sorting() {
+		Node pointer = head;
+		int temp;
+		System.out.print("Sorting LinkedList in Asscending Order: ");
+		while (pointer.next != null) {
+			Node currentpointer = pointer.next;
+			while (currentpointer != null) {
+				if (pointer.data > currentpointer.data) {
+					temp = pointer.data;
+					pointer.data = currentpointer.data;
+					currentpointer.data = temp;
+				}
+				currentpointer = currentpointer.next;
 			}
-			i++;
-			current = current.next;
+			pointer = pointer.next;
 		}
 	}
 
