@@ -6,41 +6,39 @@ public class Main {
 	    /*
 	     * PROCEDURE
 	     * ====================
-	     * 1.Creating an object
-	     * 2.Printing the Object
-	     * 3.creating an head to object
-	     * 4.creating new data to push 
-	     * 5.printing a Linked List
+	     * 1.Creating object of linked list
+	     * 2.calling method to add node to the linkedlist
+	     * 3.calling method to print the linkedlist
+	     * 4.Inserting in between the linked list
+	     * 5.calling method to print the linkedlist
 	     * =====================
 	     */
 
 		public static void main(String[] args) {
 
 			/*
-			 * 1.Creating an Object
+			 * 1.Creating object of linked list
 			 */
-			LL app = new LL(56, null);
+			LL list = new LL();
 
 			/*
-			 * 2.Printing a object
+			 * 2.calling method to add node to the linkedlist
 			 */
-			System.out.println(app);
+			list.addNode(56);
+			list.addNode(70);
+			/*
+			 * 3.calling method to print the linkedlist
+			 */
+			list.printLinkedList();
 
 			/*
-			 * 3.creating an head to object
+			 * 4. Inserting in between the linked list
 			 */
-			LL head = app;
-
+			list.insertAt(1, 30);
 			/*
-			 * 4.creating new data to push
+			 * 5.calling method to print the linkedlist
 			 */
-			app.push(30);
-			app.push(70);
-
-			/*
-			 * 5.printing a Linked List
-			 */
-			app.printList();
+			list.printLinkedList();
 
 		}
 	}

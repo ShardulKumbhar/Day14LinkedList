@@ -1,63 +1,40 @@
 package linkedlist;
-/*
- * Steps
- * ===============================
- * 1.creating variables for linklist
- * 2.creating contstructor 
- * 3:Push new data in linked list by creating the head pointer
- * 4.Methord to Print LinkedList
- * ================================
- */
+
 
 public class LL {
+	
 	/*
-	 * 1.creating variables for linklist
+	 * Step
+	 * ============================================
+	 * 1.Creating node
+	 * 2.created method addNode to add data in linedList
+	 * 3.created method to insert data in between
+	 * 4.created method to print the linked list
+	 * ============================================
 	 */
-	public int data;
-	public LL next;
-	public static LL head;
-
-	/*
-	 * 2.creating contstructor
-	 */
-	public LL(int data, LL next) {
-		super();
-		this.data = data;
-		this.next = head;
-	}
-
-	public LL(int data) {
-		super();
-		this.data = data;
-
-	}
-
-	public String toString() {
-		return data + "";
-
-	}
-
-	/*
-	 * 3:Push new data in linked list by creating the head pointer addNode - this
-	 * method is created to add data to linedList head - accepting head pointer of
-	 * LinkedList data - accepting data to put it in linkedList head - it returns
-	 * head of linkedList
-	 */
-	public LL push(int new_data) {
-
+	
+	public class Node {
 		/*
-		 * Created a new Node
+		 * 1.Creating node
 		 */
-		LL newNode = new LL(new_data);
+		public int data;
+		public Node next;
 
-		/*
-		 * Checking whether any list is available before or not and Initializing new
-		 * node to head. If node exist then Initializing head to pointer for reference
-		 */
+	}
+
+	Node head;
+
+	/*
+	 * 2.created method addNode to add data in linedList
+	 */
+	public void addNode(int data) {
+		Node newNode = new Node();
+		newNode.data = data;
+
 		if (head == null) {
 			head = newNode;
 		} else {
-			LL pointer = head;
+			Node pointer = head;
 
 			while (pointer.next != null) {
 				pointer = pointer.next;
@@ -65,28 +42,38 @@ public class LL {
 
 			pointer.next = newNode;
 		}
-
-		return head;
 	}
 
 	/*
-	 * 4.Methord to Print LinkedList
+	 * 3.created method to insert data in between
 	 */
+	public void insertAt(int index, int data) {
+		Node newNode = new Node();
+		newNode.data = data;
+		newNode.next = null;
 
-	public void printList() {
+		Node position = head;
+		for (int i = 0; i < index - 1; i++) {
+			position = position.next;
+		}
+		newNode.next = position.next;
+		position.next = newNode;
+		System.out.println("Element is added in between: " + newNode.data);
+	}
 
-		/*
-		 * printing the Linked List by verifying conditions
-		 */
+	/*
+	 * 4.created method to print the linked list
+	 */
+	public void printLinkedList() {
 		if (head == null) {
 			System.out.println("LinkedList is empty");
 		} else {
-			LL pointer = head;
-			System.out.print("Linked List: ");
+			Node pointer = head;
 			while (pointer != null) {
 				System.out.print(pointer.data + "->");
 				pointer = pointer.next;
 			}
+			System.out.println();
 		}
 	}
 }
