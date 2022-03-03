@@ -8,7 +8,7 @@ public class LL {
 	 * ============================================
 	 * 1.Creating node
 	 * 2.created method addNode to add data in linedList
-	 * 3.created method to insert data in between
+	 *  3. Method to search LinkedList to find Node with value 30
 	 * 4.created method to print the linked list
 	 * ============================================
 	 */
@@ -45,20 +45,24 @@ public class LL {
 	}
 
 	/*
-	 * 3.created method to insert data in between
+	 * 3. Method to search LinkedList to find Node with value 30
 	 */
-	public void insertAt(int index, int data) {
-		Node newNode = new Node();
-		newNode.data = data;
-		newNode.next = null;
-
-		Node position = head;
-		for (int i = 0; i < index - 1; i++) {
-			position = position.next;
+	public void search(int searchKey) {
+		Node current = head;
+		int i=0;
+		while(current != null)
+		{
+			
+			if(current.data == searchKey)
+			{
+				System.out.println("Find whether "+searchKey+" is Present or not:-");
+				System.out.println(searchKey +" is Present");
+				break;
+			}
+			i++;
+			current = current.next;
 		}
-		newNode.next = position.next;
-		position.next = newNode;
-		System.out.println("Element is added in between: " + newNode.data);
+		System.out.println("Index No : "+i);
 	}
 
 	/*
