@@ -9,8 +9,9 @@ public class Main {
 	     * 1.Creating object of linked list
 	     * 2.calling method to add node to the linkedlist
 	     * 3.calling method to print the linkedlist
-	     * 4. Sorting linked list in Asscending Order
+	     * 4. Searching for given data in linked list and deleting that node
 	     * 5.calling method to print the linkedlist
+	     * 6.getting size of linked list
 	     * =====================
 	     */
 
@@ -34,13 +35,18 @@ public class Main {
 			list.printLinkedList();
 
 			/*
-			 * 4. Sorting linked list in Asscending Order.
+			 * 4. Searching for given data in linked list and deleting that node
 			 */
-			list.sorting();
+			list.searchDelete(40);
 
 			/*
-			 * calling method to print the linkedlist
+			 * 5.calling method to print the linkedlist
 			 */
 			list.printLinkedList();
+			/*
+			 * 6.getting size of linked list
+			 */
+			list.getSize();
+		
 		}
 	}

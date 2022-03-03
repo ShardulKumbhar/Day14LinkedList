@@ -8,8 +8,9 @@ public class LL {
 	 * ============================================
 	 * 1.Creating node
 	 * 2.created method addNode to add data in linedList
-	 * 3. Method to sort LinkedList in Asscending Order.
-	 * 4.created method to print the linked list
+	 * 3. Method to search a node in LinkedList and delete
+	 * 4.created method to check the size of linked list
+	 * 5.created method to print the linked list
 	 * ============================================
 	 */
 	
@@ -43,30 +44,44 @@ public class LL {
 			pointer.next = newNode;
 		}
 	}
-
 	/*
-	 * 3. Method to sort LinkedList in Asscending Order.
+	 * 3. Method to search a node in LinkedList and delete.
 	 */
-	public void sorting() {
-		Node pointer = head;
-		int temp;
-		System.out.print("Sorting LinkedList in Asscending Order: ");
-		while (pointer.next != null) {
-			Node currentpointer = pointer.next;
-			while (currentpointer != null) {
-				if (pointer.data > currentpointer.data) {
-					temp = pointer.data;
-					pointer.data = currentpointer.data;
-					currentpointer.data = temp;
-				}
-				currentpointer = currentpointer.next;
+	public void searchDelete(int searchKey) {
+		Node previous = head;
+		Node current = previous.next;
+		while (current != null) {
+
+			if (current.data == searchKey) {
+				System.out.println("Need to search 40 and delete it");
+				previous = previous.next;
 			}
-			pointer = pointer.next;
+			previous.next = current;
+			current = current.next;
+		}
+	}
+	
+	/*
+	 * 4.created method to check the size of linked list
+	 */
+	
+	public int getSize() {
+		int count = 0;
+		if (head == null)
+			return count;
+		else {
+			Node temp = head;
+			while (temp != null) {
+				count++;
+				temp = temp.next;
+			}
+			System.out.println("Size is " + count);
+			return count;
 		}
 	}
 
 	/*
-	 * 4.created method to print the linked list
+	 * 5.created method to print the linked list
 	 */
 	public void printLinkedList() {
 		if (head == null) {
@@ -78,6 +93,7 @@ public class LL {
 				pointer = pointer.next;
 			}
 			System.out.println();
+			
 		}
 	}
 }
