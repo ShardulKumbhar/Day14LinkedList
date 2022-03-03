@@ -1,19 +1,42 @@
 package linkedlist;
 
-public class LL {
-	Node head; // Start head
+/* 
+ * Steps
+ * ==================================
+ * 1.Starting of node head;
+ * 2.creating variable
+ * 3.creating constructor
+ * 4.Created method to add value to the first of linked list
+ * 5.Created method to Print the LinkedList
+ * ====================================
+ */
 
+public class LL {
+
+	/*
+	 * 1.Starting of node head
+	 */
+	Node head;
+
+	/*
+	 * 2.creating variable
+	 */
 	class Node {
 		int data;
 		Node next;
 
+		/*
+		 * 3. creating constructor
+		 */
 		Node(int data) {
 			this.data = data;
 			this.next = null;
 		}
 	}
 
-	// add to first value
+	/*
+	 * 4.Created method to add value to the first of linked list
+	 */
 	public void addFirst(int data) {
 		Node newNode = new Node(data);
 
@@ -25,6 +48,9 @@ public class LL {
 		head = newNode;
 	}
 
+	/*
+	 * 5.Created method to Print the LinkedList
+	 */
 	public void printList() { // to print output
 
 		if (head == null) {
@@ -39,14 +65,5 @@ public class LL {
 			currNode = currNode.next;
 		}
 		System.out.println("Null");
-	}
-
-	public static void main(String[] args) {
-		LL list = new LL();
-		list.addFirst(70);
-		list.addFirst(30);
-		list.addFirst(56);// addind 56 to linked list
-		list.printList();// printing list
-
 	}
 }
