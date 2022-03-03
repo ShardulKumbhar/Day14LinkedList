@@ -1,19 +1,42 @@
 package linkedlist;
 
+/* 
+ * ==================================
+ * 1.Starting of node head
+ * 2.creating variable
+ * 3.creating constructor
+ * 4.Created method to add values to the first value
+ * 5.Created method to delete First value
+ * 6.Created method to delete Last value
+ * 7.Created method to Print the values
+ * ====================================
+ */
+
 public class LL {
-	Node head; // Start head
+	/*
+	 * 1.Starting of node head
+	 */
+	Node head;
+	/*
+	 * 2.creating variable
+	 */
 
 	class Node {
 		int data;
 		Node next;
 
+		/*
+		 * 3. creating constructor
+		 */
 		Node(int data) {
 			this.data = data;
 			this.next = null;
 		}
 	}
 
-	// add to first value
+	/*
+	 * 4.Created method to add values to the first value
+	 */
 	public void addFirst(int data) {
 		Node newNode = new Node(data);
 
@@ -25,7 +48,10 @@ public class LL {
 		head = newNode;
 	}
 
-	public void deleteFirst() { // to delete first value
+	/*
+	 * 5.Created method to delete First value
+	 */
+	public void deleteFirst() {
 
 		if (head == null) {
 			System.out.println("the list is empty");
@@ -34,7 +60,10 @@ public class LL {
 		head = head.next;
 	}
 
-	public void deleteLast() { // to delete last value
+	/*
+	 * 6.Created method to delete Last value
+	 */
+	public void deleteLast() { 
 
 		if (head == null) {
 			System.out.println("the list is empty");
@@ -52,8 +81,12 @@ public class LL {
 		}
 		secondLast.next = null;
 	}
+	
 
-	public void printList() { // to print output
+	/*
+	 * 7.Created method to Print the values
+	 */
+	public void printList() { 
 
 		if (head == null) {
 			System.out.println("list is empty");
@@ -68,17 +101,5 @@ public class LL {
 		}
 
 		System.out.println("Null");
-	}
-
-	public static void main(String[] args) {
-		LL list = new LL();
-		list.addFirst(70);
-		list.addFirst(30);
-		list.addFirst(56);// addind 56 to linked list
-		list.printList();// printing list
-
-		list.deleteLast(); // deleting last value
-		list.printList();
-
 	}
 }
