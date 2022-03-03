@@ -9,7 +9,8 @@ public class Main {
 	     * 1.Creating object of linked list
 	     * 2.calling method to add node to the linkedlist
 	     * 3.calling method to print the linkedlist
-	     * 4.Searching for node
+	     * 4. inserting node after 30
+	     * 5.calling method to print the linkedlist
 	     * =====================
 	     */
 
@@ -24,17 +25,20 @@ public class Main {
 			 * 2.calling method to add node to the linkedlist
 			 */
 			list.addNode(56);
-			list.addNode(70);
 			list.addNode(30);
+			list.addNode(70);
 			/*
 			 * 3.calling method to print the linkedlist
 			 */
 			list.printLinkedList();
 
 			/*
-			 * 4. Searching for node 
+			 * 4. inserting node after 30
 			 */
-			list.search(30);
-
+			list.searchInsert(30, 40);
+			/*
+			 * 5.calling method to print the linkedlist
+			 */
+			list.printLinkedList();
 		}
 	}

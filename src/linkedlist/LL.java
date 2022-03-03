@@ -8,7 +8,7 @@ public class LL {
 	 * ============================================
 	 * 1.Creating node
 	 * 2.created method addNode to add data in linedList
-	 *  3. Method to search LinkedList to find Node with value 30
+	 * 3. Method to search LinkedList and insert a node after 30
 	 * 4.created method to print the linked list
 	 * ============================================
 	 */
@@ -45,24 +45,23 @@ public class LL {
 	}
 
 	/*
-	 * 3. Method to search LinkedList to find Node with value 30
+	 * 3. Method to search LinkedList and insert a node after 30
 	 */
-	public void search(int searchKey) {
+	public void searchInsert(int searchKey, int data) {
 		Node current = head;
-		int i=0;
-		while(current != null)
-		{
-			
-			if(current.data == searchKey)
-			{
-				System.out.println("Find whether "+searchKey+" is Present or not:-");
-				System.out.println(searchKey +" is Present");
-				break;
+		Node newNode = new Node();
+		newNode.data = data;
+		int i = 0;
+		while (current != null) {
+
+			if (current.data == searchKey) {
+				System.out.println("Need to add 40 after 30");
+				newNode.next = current.next;
+				current.next = newNode;
 			}
 			i++;
 			current = current.next;
 		}
-		System.out.println("Index No : "+i);
 	}
 
 	/*
